@@ -1,6 +1,6 @@
-package br.com.Appetite.gerenciamentoPedido.security;
+package br.com.Appetite.gerenciamentoPedido.seguranca;
 
-import br.com.Appetite.gerenciamentoPedido.users.User;
+import br.com.Appetite.gerenciamentoPedido.usuario.User;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -23,7 +23,7 @@ public class TokenService {
 
             Algorithm algorithm = Algorithm.HMAC256(secret);
             String token = JWT.create().withIssuer("apptite-api")
-                    .withSubject(user.getUsername()) //Está dando erro
+                    .withSubject(user.getLogin()) //Está dando erro
                     .withExpiresAt(generateExpirationDate())
                     .sign(algorithm);
             return token;

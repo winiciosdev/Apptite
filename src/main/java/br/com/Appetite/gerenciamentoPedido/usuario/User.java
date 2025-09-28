@@ -1,20 +1,21 @@
-package br.com.Appetite.gerenciamentoPedido.users;
+package br.com.Appetite.gerenciamentoPedido.usuario;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.List;
 
 @Table(name = "users")
 @Entity(name = "users")
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
 
@@ -31,9 +32,17 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    public User(){
-        
-    }
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "sobrenome")
+    private String sobrenome;
+
+    @Column(name = "telefone")
+    private String telefone;
+
+    @Column(name = "data_criacao")
+    private Instant dataCriacao;
 
     public User(String login, String password, UserRole role){
         this.login = login;

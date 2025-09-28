@@ -1,4 +1,4 @@
-package br.com.Appetite.gerenciamentoPedido.users;
+package br.com.Appetite.gerenciamentoPedido.usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;

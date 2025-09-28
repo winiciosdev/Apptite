@@ -1,7 +1,7 @@
-package br.com.Appetite.gerenciamentoPedido.authentication;
+package br.com.Appetite.gerenciamentoPedido.autenticacao;
 
-import br.com.Appetite.gerenciamentoPedido.security.TokenService;
-import br.com.Appetite.gerenciamentoPedido.users.*;
+import br.com.Appetite.gerenciamentoPedido.seguranca.TokenService;
+import br.com.Appetite.gerenciamentoPedido.usuario.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("auth")
-public class AuthController {
+@RequestMapping("/auth")
+public class AutenticacaoController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -37,7 +37,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<RegisterResponseDTO> register(@Valid @RequestBody RegisterRequestDTO dto){
+    public ResponseEntity<RegisterResponseDTO> registrar(@Valid @RequestBody RegisterRequestDTO dto){
 
         if (this.repository.findByLogin(dto.login()) != null){ return ResponseEntity.badRequest().build(); }
 
@@ -48,5 +48,5 @@ public class AuthController {
 
         return ResponseEntity.ok().build();
     }
-    
+
 }

@@ -1,6 +1,6 @@
-package br.com.Appetite.gerenciamentoPedido.security;
+package br.com.Appetite.gerenciamentoPedido.seguranca;
 
-import br.com.Appetite.gerenciamentoPedido.users.UserRepository;
+import br.com.Appetite.gerenciamentoPedido.usuario.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
