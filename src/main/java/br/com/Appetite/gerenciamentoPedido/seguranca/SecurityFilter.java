@@ -1,6 +1,6 @@
-package br.com.Appetite.gerenciamentoPedido.security;
+package br.com.Appetite.gerenciamentoPedido.seguranca;
 
-import br.com.Appetite.gerenciamentoPedido.users.UserRepository;
+import br.com.Appetite.gerenciamentoPedido.usuario.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

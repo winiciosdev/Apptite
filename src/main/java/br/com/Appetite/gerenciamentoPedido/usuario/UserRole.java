@@ -1,4 +1,4 @@
-package br.com.Appetite.gerenciamentoPedido.users;
+package br.com.Appetite.gerenciamentoPedido.usuario;
 
 public enum UserRole {
 
